@@ -1,0 +1,21 @@
+# prerequesits on my mac using macports:
+# sudo port install mutt +idb+imap+sasl+ssh+smtp+headercache
+set user_name = "user@domain.com"
+set mail_server = "host.domain.com"
+set from = $user_name
+set realname="User Name"
+set imap_user=$user_name
+set imap_pass=`security find-generic-password -a $user_name -s work-imap -g -w ~/Library/Keychains/work.keychain`
+set folder="imaps://host.domain.com"
+set spoolfile="+INBOX"
+set smtp_url="smtp://$user_name@$mail_server:587"
+set smtp_pass=$imap_pass
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+set move = no 
+set ssl_force_tls = yes
+set sort = threads
+set imap_keepalive = 300
+set mail_check = 60
+set ssl_starttls = yes
